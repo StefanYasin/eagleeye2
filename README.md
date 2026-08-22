@@ -83,3 +83,36 @@ technology has real privacy implications — use it responsibly.
 ## License
 
 MIT
+
+## Commands
+
+```bash
+eagleeye2 scan --photo face.jpg --name "Full Name" --sites instagram,threads,x,github  # profile discovery
+eagleeye2 scan --photo face.jpg --urls profiles.txt --purpose investigation            # explicit URLs
+eagleeye2 exif --photo face.jpg                                                         # EXIF/GPS forensics
+eagleeye2 revimg --photo face.jpg                                                       # reverse image search (opens engines)
+```
+
+Every scan requires `--purpose` (investigation | trust_safety | missing_person | research | background | other) — the legal/ethical gate.
+
+## Try it in one command
+
+```bash
+bash try-eagleeye.sh face.jpg "Full Name" instagram,threads,x,github,linkedin,youtube
+```
+
+## Coverage
+
+**69 platforms** probed + face-verified: Instagram, Threads, X, TikTok, YouTube, Facebook, LinkedIn, GitHub, Reddit, Twitch, Steam, Telegram, Spotify, StackOverflow, HuggingFace, npm, PyPI, Mastodon, and more.
+
+## Feature roadmap (issue #1)
+
+- [x] 69-site coverage
+- [x] EXIF/GPS extraction
+- [x] Reverse image search (browser method; API engines blocked by bot detection — paid layer planned)
+- [x] Ethics gate
+- [ ] Username mode (given a username, find all accounts — Sherlock/Maigret core)
+- [ ] Recursive search
+- [ ] HTML/PDF reports
+- [ ] Web UI
+- [ ] Paid: Pipl/TruePeopleSearch, Bright Data, Google Vision
