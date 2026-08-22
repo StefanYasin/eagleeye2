@@ -7,3 +7,7 @@ build/
 *.json
 .deepface/
 .DS_Store
+
+# test fixtures
+testdata/*.jpg
+testdata/*.png
