@@ -1,3 +1,13 @@
+<div align="center">
+
+[![Stars](https://img.shields.io/github/stars/StefanYasin/eagleeye2?style=flat)]
+[![License](https://img.shields.io/github/license/StefanYasin/eagleeye2?style=flat)]
+[![Issues](https://img.shields.io/github/issues/StefanYasin/eagleeye2?style=flat)]
+[![Last commit](https://img.shields.io/github/last-commit/StefanYasin/eagleeye2?style=flat)]
+[![Language](https://img.shields.io/github/languages/top/StefanYasin/eagleeye2?style=flat)]
+
+</div>
+
 # EagleEye 2.0
 
 Find a person's social profiles from a face photo. A modern, maintained
