@@ -1,5 +1,6 @@
 <div align="center">
 
+[![CI](https://github.com/StefanYasin/eagleeye2/actions/workflows/ci.yml/badge.svg)](https://github.com/StefanYasin/eagleeye2/actions/workflows/ci.yml)
 [![Stars](https://img.shields.io/github/stars/StefanYasin/eagleeye2?style=flat)]
 [![License](https://img.shields.io/github/license/StefanYasin/eagleeye2?style=flat)]
 [![Issues](https://img.shields.io/github/issues/StefanYasin/eagleeye2?style=flat)]
