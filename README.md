@@ -127,3 +127,7 @@ bash try-eagleeye.sh face.jpg "Full Name" instagram,threads,x,github,linkedin,yo
 - [ ] HTML/PDF reports
 - [ ] Web UI
 - [ ] Paid: Pipl/TruePeopleSearch, Bright Data, Google Vision
+
+---
+
+Built and maintained by **Stefan Yasin** — technical operations, infrastructure, and applied AI. [Portfolio](https://stefanyasin.github.io/) · [LinkedIn](https://www.linkedin.com/in/stefanyasin/) · [Buy me a coffee](https://buymeacoffee.com/stefanthepro)
