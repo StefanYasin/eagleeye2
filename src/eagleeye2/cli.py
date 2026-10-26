@@ -66,10 +66,16 @@ def scan(
     ),
 ) -> None:
     """Scan for a person's profiles from a photo."""
-    from .ethics import EthicsGate, UseCase, USE_CASE_DESCRIPTIONS
+    from .ethics import EthicsGate, UseCase, USE_CASE_DESCRIPTIONS, parse_use_case
 
     gate = EthicsGate(auto_accept=auto_accept)
-    if not gate.affirm(UseCase(purpose) if purpose else None):
+    try:
+        use_case = parse_use_case(purpose)
+    except ValueError as exc:
+        typer.echo(EthicsGate.notice())
+        typer.echo(str(exc))
+        raise typer.Exit(code=1)
+    if not gate.affirm(use_case):
         typer.echo(EthicsGate.notice())
         typer.echo("Valid --purpose values: " + ", ".join(USE_CASE_DESCRIPTIONS.keys()))
         raise typer.Exit(code=1)

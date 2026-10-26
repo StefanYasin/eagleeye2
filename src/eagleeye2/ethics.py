@@ -33,6 +33,28 @@ USE_CASE_DESCRIPTIONS = {
 }
 
 
+def parse_use_case(value: str | None) -> UseCase | None:
+    """Parse a ``--purpose`` value into a :class:`UseCase`.
+
+    Returns ``None`` when nothing was supplied, which is what the gate then
+    rejects, so ``--purpose`` stays mandatory for non-interactive runs.
+    Anything unrecognised raises ``ValueError`` carrying the valid choices, so
+    a typo prints help instead of a traceback.
+    """
+    if value is None:
+        return None
+    cleaned = value.strip().lower()
+    if not cleaned:
+        return None
+    try:
+        return UseCase(cleaned)
+    except ValueError:
+        valid = ", ".join(use_case.value for use_case in UseCase)
+        raise ValueError(
+            f"unknown --purpose {value!r}. Valid values: {valid}"
+        ) from None
+
+
 class EthicsGate:
     """Affirmation gate: operator declares a lawful purpose before a scan."""
 
