@@ -64,13 +64,25 @@ EagleEye 2.0 — scan for Barack Obama (model: Facenet)
 
 ```
 src/eagleeye2/
-  cli.py        typer CLI (scan / version)
-  pipeline.py   orchestration: embed -> probe -> verify -> report
-  faces.py      deepface wrapper (lazy import: fast CLI startup)
-  discovery.py  handle generation, site rules, URL probing, og:image parsing
-  report.py     rich terminal table + JSON writer
-tests/          unit tests for handle generation (no network)
+  cli.py           typer CLI (scan / exif / revimg / version)
+  pipeline.py      orchestration: embed -> probe -> verify -> report
+  faces.py         deepface wrapper (lazy import: fast CLI startup)
+  discovery.py     handle generation, site rules, URL probing, og:image parsing
+  ethics.py        --purpose gate: every scan affirms a lawful use case first
+  exif.py          EXIF / GPS metadata extraction (Pillow only)
+  reverse_image.py reverse-image helpers: browser URLs + engine probes
+  report.py        rich terminal table + JSON writer
+tests/          unit tests, no network and no deepface required
 ```
+
+## Tests
+
+```bash
+python -m pytest tests/ -q    # no network, no deepface, no API keys
+```
+
+CI runs the same suite on Python 3.12 plus a compile check and a CLI import
+smoke test.
 
 ## Limitations & roadmap
 
