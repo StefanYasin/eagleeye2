@@ -107,7 +107,10 @@ def exif(
     typer.echo(f"  Camera:    {res.camera_make or '—'} {res.camera_model or ''}".rstrip())
     typer.echo(f"  Software:  {res.software or '—'}")
     if res.has_gps:
-        typer.echo(f"  GPS:       {res.gps_lat}, {res.gps_lon} (alt {res.gps_alt}m)")
+        alt = f" (alt {res.gps_alt:g}m)" if res.gps_alt is not None else ""
+        typer.echo(f"  GPS:       {res.gps_lat}, {res.gps_lon}{alt}")
+        if res.gps_dms:
+            typer.echo(f"  DMS:       {res.gps_dms}")
         typer.echo(f"  Maps:      {res.gmaps_url}")
     else:
         typer.echo("  GPS:       none (photo has no location data)")
