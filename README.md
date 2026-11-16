@@ -103,6 +103,32 @@ Only use this tool on publicly available information and for lawful purposes.
 Respect platform ToS; many sites prohibit automated scraping. Face-search
 technology has real privacy implications — use it responsibly.
 
+## FAQ
+
+**Is this legal to use?**
+
+Only with consent and for lawful purposes. EagleEye 2.0 is built for OSINT on publicly available data, and it ships an ethics module to keep searches compliant. Know your local laws before searching a person.
+
+**What do I need to run it?**
+
+Python 3.12+ (deepface needs TensorFlow or torch), a clear photo of the person, and a name to generate candidate handles from.
+
+**Which face model should I pick?**
+
+Facenet is the default balance of speed and accuracy. VGG-Face is more accurate but heavier; ArcFace is a solid middle option.
+
+**Where does my data go?**
+
+Nowhere. All processing, profile probing, and face verification run locally on your machine.
+
+**Windows support?**
+
+Recommended through WSL2 with a Python 3.12 venv. See the install section.
+
+**No profiles found?**
+
+Try a sharper photo, a different model, or more sites. Verification is score-based, so borderline matches are shown as such in the scored report.
+
 ## License
 
 MIT
