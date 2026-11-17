@@ -44,6 +44,9 @@ def scan(
     out: Optional[Path] = typer.Option(
         "scan_report.json", "--out", "-o", help="JSON report path."
     ),
+    md: Optional[Path] = typer.Option(
+        None, "--md", help="Also write an LLM-tuned markdown report to this path."
+    ),
     urls: Optional[Path] = typer.Option(
         None,
         "--urls",
@@ -91,6 +94,16 @@ def scan(
         urls_file=urls,
     )
     typer.echo(f"Report written to {out}")
+
+    # Confidence summary + optional markdown export (report.py, pure functions).
+    import json as _json
+    from .report import render_summary, export_markdown
+    if out and Path(out).exists():
+        report = _json.loads(Path(out).read_text(encoding="utf-8"))
+        render_summary(report)
+        if md:
+            Path(md).write_text(export_markdown(report), encoding="utf-8")
+            typer.echo(f"Markdown report written to {md}")
 
 
 @app.command()
