@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-11-16
+
+### Added
+
+- Maigret-style status glyphs [+]/[-]/[?]
+- Confidence summary (rating, best distance, follow-up leads) after every scan
+- `--md` export: LLM-tuned markdown report with disclaimer
+
 ## [Unreleased]
 
 ### Fixed
